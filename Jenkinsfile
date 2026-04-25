@@ -1,4 +1,3 @@
-def flag = false
 pipeline {
     agent any
     environment {
@@ -20,14 +19,6 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Test') {
-        when {
-            expression { flag == true } 
-        }
-        steps {
-            echo 'Testing..'
-        }
-    }
     }
     post {
         always {
